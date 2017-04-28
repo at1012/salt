@@ -11,6 +11,7 @@ base:
     - hostname
     - cert
     - etcd-proxy
+    - haproxy
   'roles:kube-master':
     - match: grain
     - hosts-master
@@ -23,4 +24,3 @@ base:
     - hosts-minion
     - flannel
     - docker
-    - kubernetes-minion
