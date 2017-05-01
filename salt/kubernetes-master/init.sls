@@ -6,6 +6,8 @@ include:
 {% from 'cert/init.sls' import ip_addresses %}
 
 {% do ip_addresses.append("IP: " + pillar['api']['cluster_ip']) %}
+# the API server can be addressed as https://127.0.0.1 also, specifically for the haproxy case
+{% do ip_addresses.append("IP: 127.0.0.1") %}
 {% for _, interface_addresses in grains['ip4_interfaces'].items() %}
   {% for interface_address in interface_addresses %}
     {% do ip_addresses.append("IP: " + interface_address) %}

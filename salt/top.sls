@@ -24,3 +24,4 @@ base:
     - hosts-minion
     - flannel
     - docker
+    - kubernetes-minion
