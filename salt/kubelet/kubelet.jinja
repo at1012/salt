@@ -27,5 +27,6 @@ KUBELET_ARGS="\
     --cloud-provider=aws \
 {% endif -%}
     {{ pillar['components']['kubelet']['args'] }} \
+    --client-ca-file={{ pillar['ssl']['ca_file'] }} \
     --require-kubeconfig \
     --kubeconfig={{ pillar['paths']['kubelet_config'] }}"
