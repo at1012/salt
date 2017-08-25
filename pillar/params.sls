@@ -49,6 +49,7 @@ kube_log_level:   '2'
 # install the addons (ie, DNS)
 addons:
   dns: 'true'
+  tiller: 'true'
 
 ssl:
   enabled:        true
